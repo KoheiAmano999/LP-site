@@ -1,0 +1,203 @@
+/* =========================
+   Base / Variables
+   ========================= */
+:root{
+  --color-black:#222222;
+  --color-yellow:#ffd61a;
+  --color-gray-bg:#fafafa;
+
+  --fs-body:16px;
+  --fs-ja-title:18px;
+  --fs-nav:21px;
+  --fs-en-title:24px;
+
+  --container:1200px;
+  --pad-h:50px;
+  --g-xxl:60px;
+  --g-l:40px;
+  --g-m:30px;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; font-size:var(--fs-body); color:var(--color-black); }
+h1{ margin:0; font-size:50px; }
+h2{ margin:0; font-size:var(--fs-en-title); }
+
+/* =========================
+   Header / Nav
+   ========================= */
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  max-width:var(--container); padding:0 var(--pad-h); margin:0 auto;
+}
+.logo img{ height:50px; width:auto; }
+.nav-list{ display:flex; gap:50px; margin:0; padding:0; list-style:none; }
+.nav-list a{ font-size:var(--fs-nav); padding:50px 0; color:inherit; text-decoration:none; }
+
+/* =========================
+   Hero
+   ========================= */
+#hero{
+  background:url("../img/mainbg.png") center/cover no-repeat;
+  min-height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; color:#fff;
+}
+#hero h1{ margin-bottom:var(--g-m); }
+.subtitle{ font-size:40px; }
+
+/* =========================
+   ABOUT
+   ========================= */
+#about h2{
+  text-align:center; color:blue;
+  margin-top:var(--g-xxl); margin-bottom:var(--g-m);
+}
+.aboutcheese{
+  text-align:center; font-size:var(--fs-ja-title);
+  margin-bottom:var(--g-xxl);
+}
+.context{ text-align:center; margin:0; padding:0; list-style:none; }
+.first{ margin-bottom:var(--g-m); }
+.second{ margin:var(--g-l) 0; }
+.about-images{ text-align:center; }
+.about-img{ margin-top:80px; }
+
+/* =========================
+   COURSE
+   ========================= */
+#course{ max-width:var(--container); padding:0 var(--pad-h); margin:0 auto; }
+#course h2{ text-align:center; margin-top:var(--g-xxl); margin-bottom:var(--g-m); }
+.courseTop{ text-align:center; margin-bottom:var(--g-xxl); }
+
+/* 行：角ピタ＆同高さ */
+.course-row{
+  display:flex; align-items:stretch; gap:0; margin:0; padding:0;
+  line-height:0; /* サブピクセル隙間対策 */
+}
+.course-row .left, .course-row .right{ flex:1; display:flex; flex-direction:column; }
+.course-row img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* 文字側：上下50（③=50 / ④=50） */
+.course-row .text{ padding:50px 0; line-height:1.8; }
+.course-row .text h3{ font-size:var(--fs-ja-title); margin:0 0 40px; }
+.course-row .text p{ margin:0; }
+
+/* 段別：画像⇄文字の間 = 50px */
+.row-1 .right{ padding-left:50px; }
+.row-2 .left { padding-right:50px; }
+.row-3 .right{ padding-left:50px; }
+
+/* =========================
+   NEWS
+   ========================= */
+#news{ max-width:var(--container); padding:0 var(--pad-h); margin:0 auto; }
+#news h2{ text-align:center; margin-top:var(--g-xxl); margin-bottom:var(--g-m); }
+#news .news-ja{ text-align:center; font-size:var(--fs-body); margin-bottom:var(--g-xxl); }
+
+.news-list{ display:grid; grid-template-columns:repeat(3,300px); gap:var(--g-m); justify-content:center; }
+.news-card{ width:300px; display:flex; flex-direction:column; transition:transform .2s, box-shadow .2s, background-color .2s; }
+.news-card img{ width:100%; height:auto; display:block; }
+.news-card .news-date{ display:block; margin:30px 0 24px; font-size:14px; color:#666; }
+#news .news-card h3{ margin-top:0; }
+.news-card .news-link{ display:block; color:inherit; text-decoration:none; }
+.news-card .news-link:visited{ color:inherit; }
+.news-card:hover{ transform:translateY(-2px); box-shadow:0 8px 16px rgba(0,0,0,.12); background-color:var(--color-gray-bg); cursor:pointer; }
+.news-card .news-link:focus-visible{ outline:2px solid var(--color-yellow); outline-offset:4px; border-radius:4px; }
+.news-more{ text-align:center; margin:60px 0 0; }
+.btn-more{
+  display:inline-block; width:300px; height:60px; line-height:60px; font-size:18px;
+  color:var(--color-black); background:var(--color-yellow); text-decoration:none; border-radius:4px; transition:filter .2s;
+}
+.btn-more:hover{ filter:brightness(.95); }
+
+/* =========================
+   ACCESS
+   ========================= */
+#access{ max-width:var(--container); padding:0 var(--pad-h); margin:0 auto; }
+#access h2{ text-align:center; margin-top:var(--g-xxl); margin-bottom:var(--g-m); }
+#access .access-ja{ text-align:center; font-size:var(--fs-ja-title); margin-bottom:var(--g-m); }
+#access iframe{ width:100%; height:400px; display:block; border:0; margin-bottom:var(--g-xxl); }
+#access p{ text-align:center; line-height:1.8; }
+
+/* =========================
+   CONTACT
+   ========================= */
+#contact h2{ text-align:center; margin-top:var(--g-xxl); margin-bottom:var(--g-m); }
+#contact .contact-ja{ text-align:center; font-size:var(--fs-ja-title); margin-bottom:var(--g-xxl); }
+
+/* 上部メッセージ（直下のp） */
+#contact > p{ text-align:center; line-height:1.8; font-size:var(--fs-body); margin:0; }
+#contact > p.contact-ja{ margin-top:30px; margin-bottom:var(--g-xxl); }
+#contact > p:nth-of-type(3){ margin-bottom:var(--g-m); }
+#contact > p:nth-of-type(5){ margin-bottom:70px; }
+
+/* フォーム外枠＆各行2カラム（240 / 40 / 400） */
+#contact .contact-form{ max-width:680px; margin:0 auto; padding:0 20px; }
+#contact .contact-form p{
+  display:grid; grid-template-columns:240px 400px; column-gap:40px; align-items:center; margin-bottom:var(--g-m);
+}
+#contact .contact-form label{ justify-self:end; font-size:var(--fs-body); }
+
+/* 入力系（テキスト/セレクト/テキストエリア） */
+#contact .contact-form input[type="text"],
+#contact .contact-form input[type="email"],
+#contact .contact-form input[type="tel"],
+#contact .contact-form input[type="url"],
+#contact .contact-form input[type="number"],
+#contact .contact-form input[type="password"],
+#contact .contact-form select,
+#contact .contact-form textarea{
+  width:100%; padding:10px; font-size:var(--fs-body);
+  border:1px solid #bfbfbf; border-radius:4px; box-sizing:border-box; margin-top:8px;
+  background:#fff;
+}
+/* チェックボックスだけは幅auto */
+#contact .contact-form input[type="checkbox"]{ width:auto; margin:0; padding:0; }
+
+/* 志望動機（fieldset） */
+#contact .contact-form fieldset.row-motive{
+  display:grid; grid-template-columns:240px 400px; column-gap:40px; align-items:start;
+  margin-bottom:30px; border:0; padding:0;
+}
+#contact .contact-form .row-motive legend{ grid-column:1; justify-self:end; margin:0; font-size:16px; }
+#contact .contact-form .row-motive .checks{
+  grid-column:2; display:flex; flex-direction:column; gap:12px; text-align:left;
+}
+#contact .contact-form .row-motive .cb{ display:inline-flex; align-items:center; gap:8px; margin:0; }
+
+/* お問い合わせ（200字）：左=タイトル / 右=入力 を強制 */
+#contact .contact-form p.row-detail{
+  display:grid; grid-template-columns:240px 400px; column-gap:40px; align-items:start;
+}
+#contact .contact-form p.row-detail > *{ grid-row:1 !important; }
+#contact .contact-form p.row-detail label{ grid-column:1 !important; justify-self:end; margin:0; }
+#contact .contact-form p.row-detail textarea{ grid-column:2 !important; width:100%; }
+
+/* 送信ボタン：中央＆仕様サイズ */
+#contact .contact-form p:last-child{ display:flex; justify-content:center; margin-top:0; }
+#contact .contact-form button[type="submit"]{
+  width:300px; height:60px; font-size:18px; color:#222; background:var(--color-yellow);
+  border:none; border-radius:4px; cursor:pointer; transition:filter .2s;
+}
+#contact .contact-form button[type="submit"]:hover{ filter:brightness(.95); }
+
+/* =========================
+   Footer
+   ========================= */
+footer{ background:#707070; color:#fff; text-align:center; padding:30px 0; }
+footer small{ font-size:14px; letter-spacing:.02em; }
+
+/* =========================
+   (任意) 最小のレスポンシブ
+   ========================= */
+@media (max-width:900px){
+  .header-inner{ padding:0 20px; }
+  #course, #news, #access{ padding:0 20px; }
+
+  .course-row{ flex-direction:column; gap:var(--g-m); }
+  .news-list{ grid-template-columns:1fr; }
+  .news-card{ width:100%; }
+
+  #contact .contact-form p{ grid-template-columns:1fr; column-gap:0; align-items:start; }
+  #contact .contact-form label{ justify-self:start; margin-bottom:6px; }
+}
